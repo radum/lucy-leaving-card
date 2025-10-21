@@ -15,13 +15,13 @@ const app = TubesCursor(document.getElementById('canvas'), {
 	}
 });
 
-// document.body.addEventListener('click', () => {
-// 	const colors = randomColors(3);
-// 	const lightsColors = randomColors(4);
-// 	console.log(colors, lightsColors);
-// 	app.tubes.setColors(colors);
-// 	app.tubes.setLightsColors(lightsColors);
-// });
+document.body.addEventListener('click', () => {
+	const colors = randomColors(3);
+	const lightsColors = randomColors(4);
+	console.log(colors, lightsColors);
+	app.tubes.setColors(colors);
+	app.tubes.setLightsColors(lightsColors);
+});
 
 function randomColors(count) {
 	return new Array(count).fill(0).map(
