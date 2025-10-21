@@ -1,5 +1,5 @@
 @import 'https://unpkg.com/open-props' layer(design.system);
-@import 'https://unpkg.com/open-props/normalize.min.css' layer(cardlayer.support);
+/* @import 'https://unpkg.com/open-props/normalize.min.css' layer(cardlayer.support); */
 
 :root {
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
