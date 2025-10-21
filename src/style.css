@@ -52,7 +52,10 @@ h1 {
 	left: 40%;
 	z-index: 10000;
 	/* text-shadow: 0 1px 0 rgb(218.6666666667, 160.5333333333, 160.5333333333), 0 2px 0 rgb(215.8333333333, 153.1666666667, 153.1666666667), 0 3px 0 rgb(213, 145.8, 145.8), 0 4px 0 rgb(210.1666666667, 138.4333333333, 138.4333333333), 0 5px 0 rgb(207.3333333333, 131.0666666667, 131.0666666667), 0 6px 0 rgb(204.5, 123.7, 123.7), 0 7px 0 rgb(201.6666666667, 116.3333333333, 116.3333333333), 0 8px 0 rgb(198.8333333333, 108.9666666667, 108.9666666667), 0 0 5px rgba(229.9333333333, 139.0666666667, 139.0666666667, 0.05), 0 -1px 3px rgba(229.9333333333, 139.0666666667, 139.0666666667, 0.2), 0 9px 9px rgba(229.9333333333, 139.0666666667, 139.0666666667, 0.3), 0 12px 12px rgba(229.9333333333, 139.0666666667, 139.0666666667, 0.3), 0 15px 15px rgba(229.9333333333, 139.0666666667, 139.0666666667, 0.3); */
-	text-shadow: 0 1px 0 rgb(81.6, 40.8, 122.4), 0 2px 0 rgb(76.5, 38.25, 114.75), 0 3px 0 rgb(71.4, 35.7, 107.1), 0 4px 0 rgb(66.3, 33.15, 99.45), 0 5px 0 rgb(61.2, 30.6, 91.8), 0 6px 0 rgb(56.1, 28.05, 84.15), 0 7px 0 rgb(51, 25.5, 76.5), 0 8px 0 rgb(45.9, 22.95, 68.85), 0 0 5px rgba(76.5, 22.95, 130.05, 0.05), 0 -1px 3px rgba(76.5, 22.95, 130.05, 0.2), 0 9px 9px rgba(76.5, 22.95, 130.05, 0.3), 0 12px 12px rgba(76.5, 22.95, 130.05, 0.3), 0 15px 15px rgba(76.5, 22.95, 130.05, 0.3);
+	text-shadow: 0 1px 0 rgb(81.6, 40.8, 122.4), 0 2px 0 rgb(76.5, 38.25, 114.75), 0 3px 0 rgb(71.4, 35.7, 107.1),
+		0 4px 0 rgb(66.3, 33.15, 99.45), 0 5px 0 rgb(61.2, 30.6, 91.8), 0 6px 0 rgb(56.1, 28.05, 84.15), 0 7px 0 rgb(51, 25.5, 76.5),
+		0 8px 0 rgb(45.9, 22.95, 68.85), 0 0 5px rgba(76.5, 22.95, 130.05, 0.05), 0 -1px 3px rgba(76.5, 22.95, 130.05, 0.2),
+		0 9px 9px rgba(76.5, 22.95, 130.05, 0.3), 0 12px 12px rgba(76.5, 22.95, 130.05, 0.3), 0 15px 15px rgba(76.5, 22.95, 130.05, 0.3);
 }
 
 #canvas {
@@ -301,6 +304,31 @@ h1 {
 
 /* ------------------------------ */
 
+@keyframes bounce {
+	35%,
+	65% {
+		scale: var(--scale);
+	}
+}
+
+@keyframes flip {
+	to {
+		rotate: 360deg;
+	}
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(90deg);
+	}
+}
+
+@keyframes float-out {
+	to {
+		rotate: 360deg;
+	}
+}
+
 .sparkle-button {
 	position: fixed;
 	bottom: 5rem;
@@ -354,12 +382,6 @@ h1 {
 		animation-name: bounce;
 	}
 
-	@keyframes bounce {
-		35%,
-		65% {
-			scale: var(--scale);
-		}
-	}
 	.sparkle path:nth-of-type(1) {
 		--scale: 0.5;
 		--delay: 0.1;
@@ -399,12 +421,6 @@ h1 {
 		animation: flip calc(var(--spark) * 2) infinite steps(2, end);
 	}
 
-	@keyframes flip {
-		to {
-			rotate: 360deg;
-		}
-	}
-
 	.spark:before {
 		content: '';
 		position: absolute;
@@ -437,12 +453,6 @@ h1 {
 		transition: background var(--transition);
 	}
 
-	@keyframes rotate {
-		to {
-			transform: rotate(90deg);
-		}
-	}
-
 	@supports (selector(:has(:is(+ *)))) {
 		body:has(button:is(:hover, :focus-visible)) {
 			--active: 1;
@@ -458,12 +468,13 @@ h1 {
 		--play-state: runnin;
 	}
 
-	.bodydrop {
+	/* Removed this as it will hide the card highlight */
+	/* .bodydrop {
 		background: hsl(260 calc(var(--active) * 97%) 6%);
 		position: fixed;
 		inset: 0;
 		z-index: -1;
-	}
+	} */
 
 	button:is(:hover, :focus-visible) {
 		--active: 1;
@@ -504,12 +515,6 @@ h1 {
 
 	.particle:nth-of-type(even) {
 		animation-direction: reverse;
-	}
-
-	@keyframes float-out {
-		to {
-			rotate: 360deg;
-		}
 	}
 
 	.text {
