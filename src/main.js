@@ -46,3 +46,9 @@ showButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
 	dialog.close();
 });
+
+let jhToggle = true;
+document.querySelector('img[alt="James Hill"]').addEventListener('click', (event) => {
+	event.target.src = jhToggle ? '/images/downbutnotout.png' : '/images/james.jpg';
+	jhToggle = !jhToggle;
+});
