@@ -3,6 +3,7 @@
 // import viteLogo from '/vite.svg'
 // import { setupCounter } from './counter.js'
 
+import 'virtual:uno.css'
 import TubesCursor from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js';
 
 const app = TubesCursor(document.getElementById('canvas'), {
